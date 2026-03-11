@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validador de Cédula</title>
+    <link rel="stylesheet" href="assets/css/style3.2.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <h1>Validador de Cédula</h1>
+            <p class="subtitle">Ingrese una cédula para validarla</p>
+            
+            <form id="formulario" onsubmit="validarFormulario(event)">
+                <div class="form-group">
+                    <label for="cedula">Número de Cédula:</label>
+                    <input 
+                        type="text" 
+                        id="cedula" 
+                        placeholder="Ej: xxx-xxxxxxx-x" 
+                        required
+                        maxlength="13"
+                        inputmode="numeric"
+                    >
+                </div>
+                
+                <button type="submit" class="btn">Validar Cédula</button>
+            </form>
+
+            <div id="resultado" class="resultado oculto"></div>
+
+
+        </div>
+    </div>
+
+    <script src="assets/js/validacion.js"></script>
+</body>
+</html>

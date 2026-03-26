@@ -1,41 +1,33 @@
-/* ===========================
-   ESTILOS GENERALES
-   =========================== */
+/* VARIABLES */
+:root {
+	--primary: #1e3c72;
+	--secondary: #2a5298;
+	--accent: #00d4ff;
+	--text: #333;
+	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+	--shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
 
+/* RESET */
 * {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
 
-:root {
-	--color-primary: #1e3c72;
-	--color-secondary: #2a5298;
-	--color-accent: #00d4ff;
-	--color-dark: #0a0e27;
-	--color-light: #f5f7fa;
-	--color-text: #333;
-	--color-border: #e0e0e0;
-	--color-success: #4caf50;
-	--color-warning: #ff9800;
-	--shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-	--shadow-lg: 0 10px 20px rgba(0, 0, 0, 0.15);
-}
-
+/* BASE */
 body {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	line-height: 1.6;
-	color: var(--color-text);
+	color: var(--text);
 	background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
 	min-height: 100vh;
 }
 
-/* ===========================
-   HEADER
-   =========================== */
+/* HEADER */
 
 header {
-	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+	background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 	color: white;
 	padding: 1rem 0;
 	box-shadow: var(--shadow-lg);
@@ -69,7 +61,7 @@ header nav a {
 	color: white;
 	text-decoration: none;
 	font-weight: 500;
-	transition: all 0.3s ease;
+	transition: color 0.3s ease;
 	position: relative;
 }
 
@@ -80,16 +72,16 @@ header nav a::after {
 	left: 0;
 	width: 0;
 	height: 2px;
-	background: var(--color-accent);
+	background: var(--accent);
 	transition: width 0.3s ease;
+}
+
+header nav a:hover {
+	color: var(--accent);
 }
 
 header nav a:hover::after {
 	width: 100%;
-}
-
-header nav a:hover {
-	color: var(--color-accent);
 }
 
 /* ===========================
@@ -103,14 +95,12 @@ header nav a:hover {
 	margin: 3rem auto;
 	border-radius: 15px;
 	max-width: 800px;
-	margin-left: auto;
-	margin-right: auto;
 	box-shadow: var(--shadow-lg);
 }
 
 #hero h2 {
 	font-size: 2.5rem;
-	color: var(--color-primary);
+	color: var(--primary);
 	margin-bottom: 1.5rem;
 	font-weight: 700;
 }
@@ -124,7 +114,7 @@ header nav a:hover {
 
 .btn {
 	display: inline-block;
-	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
 	color: white;
 	padding: 0.8rem 2.5rem;
 	border-radius: 50px;
@@ -140,16 +130,13 @@ header nav a:hover {
 .btn:hover {
 	transform: translateY(-3px);
 	box-shadow: var(--shadow-lg);
-	background: linear-gradient(135deg, var(--color-secondary), var(--color-primary));
 }
 
 .btn:active {
 	transform: translateY(-1px);
 }
 
-/* ===========================
-   MAIN CONTENT & TASKS
-   =========================== */
+/* MAIN */
 
 main {
 	max-width: 1200px;
@@ -164,7 +151,7 @@ main {
 	margin-bottom: 3rem;
 }
 
-/* Task Cards Styling */
+/* TASK CARDS */
 .Tarea1,
 .Tarea2,
 .Tarea.2,
@@ -175,13 +162,13 @@ main {
 	padding: 2rem;
 	box-shadow: var(--shadow);
 	transition: all 0.3s ease;
-	border-left: 5px solid var(--color-primary);
+	border-left: 5px solid var(--primary);
 	position: relative;
 	overflow: hidden;
 }
 
 .Tarea2 {
-	border-left-color: var(--color-secondary);
+	border-left-color: var(--secondary);
 }
 
 .Tarea.2 {
@@ -193,7 +180,7 @@ main {
 }
 
 .Tarea4 {
-	border-left-color: var(--color-accent);
+	border-left-color: var(--accent);
 }
 
 .Tarea1:hover,
@@ -216,7 +203,7 @@ main {
 	left: 0;
 	right: 0;
 	height: 3px;
-	background: linear-gradient(90deg, var(--color-accent), rgba(0, 212, 255, 0));
+	background: linear-gradient(90deg, var(--accent), rgba(0, 212, 255, 0));
 	transform: scaleX(0);
 	transform-origin: left;
 	transition: transform 0.3s ease;
@@ -235,7 +222,7 @@ main {
 .Tarea.2 h2,
 .Tarea3 h2,
 .Tarea4 h2 {
-	color: var(--color-primary);
+	color: var(--primary);
 	margin-bottom: 1rem;
 	font-size: 1.5rem;
 }
@@ -258,7 +245,7 @@ main {
 .Tarea4 a {
 	display: inline-block;
 	color: white;
-	background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
 	padding: 0.6rem 1.5rem;
 	border-radius: 25px;
 	text-decoration: none;
@@ -278,12 +265,10 @@ main {
 	box-shadow: var(--shadow-lg);
 }
 
-/* ===========================
-   FOOTER
-   =========================== */
+/* FOOTER */
 
 footer {
-	background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+	background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
 	color: white;
 	text-align: center;
 	padding: 2rem;
@@ -296,9 +281,7 @@ footer p {
 	letter-spacing: 0.5px;
 }
 
-/* ===========================
-   RESPONSIVE DESIGN
-   =========================== */
+/* RESPONSIVE */
 
 @media (max-width: 768px) {
 	header .container {
@@ -365,19 +348,7 @@ footer p {
 	}
 }
 
-/* ===========================
-   UTILITY CLASSES
-   =========================== */
-
-.container {
-	max-width: 1200px;
-	margin: 0 auto;
-	padding: 0 1rem;
-}
-
-/* ===========================
-   ANIMACIONES
-   =========================== */
+/* ANIMATIONS */
 
 @keyframes fadeIn {
 	from {
@@ -396,21 +367,10 @@ footer p {
 .Tarea3,
 .Tarea4 {
 	animation: fadeIn 0.6s ease-out forwards;
-	animation-delay: 0.1s;
 }
 
-.Tarea2 {
-	animation-delay: 0.2s;
-}
-
-.Tarea.2 {
-	animation-delay: 0.3s;
-}
-
-.Tarea3 {
-	animation-delay: 0.4s;
-}
-
-.Tarea4 {
-	animation-delay: 0.5s;
-}
+.Tarea1 { animation-delay: 0.1s; }
+.Tarea2 { animation-delay: 0.2s; }
+.Tarea.2 { animation-delay: 0.3s; }
+.Tarea3 { animation-delay: 0.4s; }
+.Tarea4 { animation-delay: 0.5s; }

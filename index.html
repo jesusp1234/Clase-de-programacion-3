@@ -1,114 +1,83 @@
-<!Doctype html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Biblioteca de tareas - UASD</title>
+	<title>Biblioteca de Tareas - UASD</title>
 	<link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
-
+	<!-- HEADER -->
 	<header>
 		<div class="container">
-			<h1> UASD</h1>
+			<h1>UASD</h1>
 			<nav>
-				
-				<a href="#"> Inicio</a> |
-				<a href="#Tarea"> Tareas</a>
-				
+				<a href="#inicio">Inicio</a>
+				<a href="#tareas">Tareas</a>
 			</nav>
 		</div>
 	</header>
 
-	<section id="hero">
-		<div class="container">
-			<h2>Biblioteca de tareas.</h2>
-			<p>Aqui se puede encontrar las tareas de los cursos de la UASD,<br>
-				hay que tener en cuenta que las tareas estan ordenadas con los nombres que el profesor pone<br>
-				en la plataforma de la UASD, por lo que es importante revisar el nombre de la tarea para
-				encontrarla.<br>
-			</p>
-			<a href="#Tarea" class="btn">Revisar tareas</a><br><br><br><br>
+	<!-- HERO SECTION -->
+	<section id="inicio" class="hero">
+		<div class="hero-content">
+			<h2>Biblioteca de Tareas</h2>
+			<p>Encuentra todas las tareas organizadas por prácticas. Revisa fácilmente cada actividad y accede a su contenido.</p>
+			<a href="#tareas" class="btn">Ver tareas</a>
 		</div>
 	</section>
 
-
+	<!-- MAIN CONTENT -->
 	<main>
-		<section class="conteiner-gene" id="Tarea">
-			<div class="Tarea1">
-				<h2>Practica 1 </h2>
-				<p><strong>Objetivos:</strong> Desarrollar una página web básica utilizando HTML
-					puro, donde mostrarás tus datos biográficos y tu horario de
-					clases para el semestre 2026-10. Este ejercicio se realizará
-					utilizando un editor de texto simple, como Notepad, Notepad++,
-					o cualquier editor de texto similar. </p>
+		<section id="tareas" class="tasks-section">
+			<div class="container">
+				<h2 class="section-title">Mis Prácticas</h2>
+				<div class="tasks-grid">
+					<!-- Practica 1 -->
+					<article class="task-card">
+						<h3>Práctica 1</h3>
+						<p>Crear una página web básica con datos personales y horario.</p>
+						<a href="Tareas/Práctica1.html" class="card-btn">Ver más</a>
+					</article>
 
-				<a href="Tareas/Práctica1.html">Ver detalles</a>
+					<!-- Practica 2 -->
+					<article class="task-card">
+						<h3>Práctica 2</h3>
+						<p>Desarrollar biografía completa con información personal y profesional.</p>
+						<a href="Tareas/Practica2.1.html" class="card-btn">Ver más</a>
+					</article>
 
-			</div>
+					<!-- Practica 2.2 -->
+					<article class="task-card">
+						<h3>Práctica 2.2</h3>
+						<p>Mostrar 102 etiquetas HTML organizadas correctamente.</p>
+						<a href="Tareas/Practica2.2.html" class="card-btn">Ver más</a>
+					</article>
 
-			<div class="Tarea2">
-				<h2>Practica 2 </h2>
-				<p><strong>Objetivos:</strong>
-					1. Datos personales básicos<br>
-					2. Contexto familiar<br>
-					3. Formación académica<br>
-					4. Trayectoria profesional<br>
-					5. Producción intelectual o artística<br>
-					6. Reconocimientos y logros<br>
-					7. Aportes sociales y comunitarios<br>
-				</p>
+					<!-- Practica 3 -->
+					<article class="task-card">
+						<h3>Práctica 3</h3>
+						<p>Crear estructura web inspirada en el Banco de Reservas.</p>
+						<a href="Tareas/Practica3.html" class="card-btn">Ver más</a>
+					</article>
 
-				<a href="Tareas/Practica2.1.html">Ver detalles</a>
-
-			</div>
-
-			<div class="Tarea.2">
-				<h2>Practica 2.2 </h2>
-				<p><strong>Objetivo:</strong>
-					Mostrar 102 Etiquetas HTML, conforme a la siguiente estructura.
-				</p>
-
-				<a href="Tareas/Practica2.2.html">Ver detalles</a>
-
-			</div>
-						<div class="Tarea3">
-				<h2>Practica 3 </h2>
-				<p><strong>Objetivo:</strong>
-					Ver Arquitectura (Forma) de la Página, Hacer estructura de menús 
-					y funcionalides usando CSS, <br>
-					tomando como ejemplo la página del Banco de Reservas
-				</p>
-
-				<a href="Tareas/Practica3.html">Ver detalles</a>
-
-			</div>
-
-			<div class="Tarea4">
-				<h2>Practica 4 </h2>
-				<p><strong>Objetivo:</strong>
-					Crear un menú dinámico asíncrono cargado desde JSON,
-					con funcionalidades de submenú y manejo de eventos con JavaScript.
-				</p>
-
-				<a href="Tareas/practica4/index.html">Ver detalles</a>
-
+					<!-- Practica 4 -->
+					<article class="task-card">
+						<h3>Práctica 4</h3>
+						<p>Menú dinámico usando JSON y JavaScript.</p>
+						<a href="Tareas/practica4/index.html" class="card-btn">Ver más</a>
+					</article>
+				</div>
 			</div>
 		</section>
-
-
 	</main>
 
-
+	<!-- FOOTER -->
 	<footer>
-
-		<p>Derechos reservados 2026 Jesus Pujols</p>
-
-
+		<p>&copy; 2026 Jesús Pujols. Derechos reservados.</p>
 	</footer>
-
 </body>
 
 </html>

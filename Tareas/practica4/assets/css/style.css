@@ -1,14 +1,88 @@
-body {
-    font-family: Arial, sans-serif;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+/* ==============================================
+   VARIABLES
+   ============================================== */
+
+:root {
+    --primary: #4f46e5;
+    --secondary: #7c3aed;
+    --accent: #22d3ee;
+    --bg: #0f172a;
+    --card: rgba(255, 255, 255, 0.08);
+    --text: #e5e7eb;
+    --text-light: #cbd5f5;
+    --border: rgba(255, 255, 255, 0.1);
+    --radius: 12px;
 }
-/* estilos para el menu generado */
-nav {
-    margin: 20px 0;
+
+/* ==============================================
+   RESET
+   ============================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ==============================================
+   BASE STYLES
+   ============================================== */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--bg) 0%, #1e293b 100%);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* ==============================================
+   HEADER
+   ============================================== */
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--card);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+}
+
+header h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--accent), #a78bfa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    color: var(--text-light);
+    font-size: 1rem;
+}
+
+/* ==============================================
+   MENU STYLES
+   ============================================== */
+
+.menu {
     display: flex;
+    flex-wrap: wrap;
     gap: 0;
+    margin-bottom: 2rem;
 }
 
 .menu-container {
@@ -16,66 +90,188 @@ nav {
 }
 
 .menu-button {
-    padding: 10px 20px;
+    padding: 12px 24px;
     cursor: pointer;
-    font-size: 16px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-weight: bold;
+    font-size: 1rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.menu-button:first-child {
+    border-top-left-radius: var(--radius);
+    border-bottom-left-radius: var(--radius);
+}
+
+.menu-container:last-child .menu-button {
+    border-top-right-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
 }
 
 .menu-button:hover {
-    background-color: #e0e0e0;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .menu-button.active {
-    background-color: #007bff;
-    color: white;
-    border-color: #0056b3;
+    background: linear-gradient(135deg, var(--accent), #22d3ee);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.5);
 }
 
-/* estilos para el submenu */
+/* ==============================================
+   SUBMENU STYLES
+   ============================================== */
+
 .submenu {
     display: none;
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: #ffffff;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-top: 2px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    margin-top: 5px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     z-index: 100;
+    min-width: 200px;
+    backdrop-filter: blur(12px);
 }
 
 .submenu-button {
     display: block;
     width: 100%;
-    padding: 10px 15px;
-    margin: 0;
+    padding: 12px 20px;
     cursor: pointer;
-    font-size: 14px;
-    background-color: transparent;
+    font-size: 0.95rem;
+    background: transparent;
+    color: var(--text);
     border: none;
     text-align: left;
     border-radius: 0;
+    transition: all 0.3s ease;
+}
+
+.submenu-button:first-child {
+    border-top-left-radius: var(--radius);
+    border-top-right-radius: var(--radius);
+}
+
+.submenu-button:last-child {
+    border-bottom-left-radius: var(--radius);
+    border-bottom-right-radius: var(--radius);
 }
 
 .submenu-button:hover {
-    background-color: #e8f4ff;
+    background: rgba(34, 211, 238, 0.2);
+    color: var(--accent);
+    padding-left: 30px;
 }
 
 .submenu-button.active {
-    background-color: #007bff;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
 }
-/* estilos para el contenido */
-#contenido {
-    margin-top: 30px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    min-height: 200px;
-    border-radius: 4px;
-    background-color: #fafafa;
+
+/* ==============================================
+   CONTENT AREA
+   ============================================== */
+
+.content {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    min-height: 300px;
+    backdrop-filter: blur(12px);
+    animation: fadeIn 0.5s ease-out;
+}
+
+.content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent);
+}
+
+.content p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+/* ==============================================
+   ANIMATIONS
+   ============================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==============================================
+   RESPONSIVE DESIGN
+   ============================================== */
+
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+
+    .container {
+        max-width: 100%;
+    }
+
+    header {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .subtitle {
+        font-size: 0.9rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .menu-button {
+        width: 100%;
+        border-radius: var(--radius) !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .menu-container:last-child .menu-button {
+        margin-bottom: 0;
+    }
+
+    .submenu {
+        position: static;
+        border: none;
+        background: rgba(50, 50, 50, 0.3);
+        margin: 0;
+        box-shadow: none;
+    }
+
+    .content {
+        padding: 1.5rem;
+        min-height: auto;
+    }
+
+    .content h3 {
+        font-size: 1.2rem;
+    }
 }

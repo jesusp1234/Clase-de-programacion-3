@@ -1,21 +1,29 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
-    <title>Menu Asíncrono</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Asíncrono con JSON - Práctica 4</title>
     <link rel="icon" href="img/menu_icon.png" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body>
+    <div class="container">
+        <header>
+            <h1>Mi Menú Dinámico</h1>
+            <p class="subtitle">Cargado desde JSON de forma asíncrona</p>
+        </header>
 
-    <h1>Mi Web</h1>
+        <nav id="menu" class="menu"></nav>
 
-    <nav id="menu"></nav>
-
-    <div id="contenido">
-        <p>Selecciona una opción del menú...</p>
+        <main id="contenido" class="content">
+            <p>Selecciona una opción del menú...</p>
+        </main>
     </div>
 
     <script src="assets/js/script.js"></script>
 </body>
+
 </html>

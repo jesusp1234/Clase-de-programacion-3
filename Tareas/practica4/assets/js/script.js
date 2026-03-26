@@ -1,5 +1,5 @@
 
-fetch('/practica4/manu.json')
+fetch('./manu.json')
     .then(r => r.json())
     .then(data => {
         let nav = document.getElementById('menu');

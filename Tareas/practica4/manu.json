@@ -1,0 +1,38 @@
+[
+  {
+    "id": "inicio",
+    "nombre": "Inicio",
+    "contenido": "Esto es una prueba de inicio con un menu asincronico."
+  },
+  {
+    "id": "servicios",
+    "nombre": "Servicios",
+    "contenido": "Aqui guardo informacion sobre nuestros servicios.",
+    "submenu": [
+      {
+        "id": "servicios-desarrollo",
+        "nombre": "Desarrollo Web",
+        "contenido": "Creamos sitios web modernos y responsive diseñados para tu negocio."
+      }
+
+    ]
+  },
+  {
+    "id": "productos",
+    "nombre": "Productos",
+    "contenido": "Productos de todo tipo y calidad lorem ipsum dolor sit amet.",
+    "submenu": [
+      {
+        "id": "productos-software",
+        "nombre": "Software",
+        "contenido": "Suite de herramientas de software empresarial de alta performance."
+      }
+
+    ]
+  },
+  {
+    "id": "contacto",
+    "nombre": "Contacto",
+    "contenido": "Para contactarnos puedes llamar al 809-xxx-xxxx o enviarnos un email a ejemplo@test.com."
+  }
+]

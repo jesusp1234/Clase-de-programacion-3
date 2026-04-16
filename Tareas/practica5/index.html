@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 5 - Formulario Asincrónico con JSON</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 Gestión de Registros Médicos</h1>
+            <p>Formulario asincrónico con múltiples páginas</p>
+        </header>
+
+        <div class="main-content">
+            <!-- Selector de Modo -->
+            <div class="mode-selector">
+                <button class="btn-mode active" data-mode="nuevo">Nuevo Registro</button>
+                <button class="btn-mode" data-mode="editar">Editar Registro</button>
+                <button class="btn-mode" data-mode="ver">Ver Registros</button>
+            </div>
+
+            <!-- Formulario de 5 Páginas -->
+            <form id="formularioRegistro" class="formulario">
+                
+                <!-- Página 1: Datos Personales -->
+                <div class="pagina active" data-pagina="1">
+                    <h2>Página 1: Datos Personales</h2>
+                    <div class="form-group">
+                        <label for="nombre">Nombre Completo:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="edad">Edad:</label>
+                            <input type="number" id="edad" name="edad" min="1" max="150" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cedula">Cédula:</label>
+                            <input type="text" id="cedula" name="cedula" placeholder="XXX-XXXXXXX-X" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="sexo">Sexo:</label>
+                            <select id="sexo" name="sexo" required>
+                                <option value="">Seleccionar...</option>
+                                <option value="M">Masculino</option>
+                                <option value="F">Femenino</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="direccion">Dirección:</label>
+                        <textarea id="direccion" name="direccion" rows="3" ></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" required>
+                    </div>
+                </div>
+
+                <!-- Página 2: Familiares -->
+                <div class="pagina" data-pagina="2">
+                    <h2>Página 2: Familiares</h2>
+                    <p class="info-text">Agregue información sobre sus familiares</p>
+                    
+                    <div class="form-group">
+                        <label for="nombreFamiliar">Nombre del Familiar:</label>
+                        <input type="text" id="nombreFamiliar" name="nombreFamiliar" placeholder="Ej: Dionisio Silverio">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="parentesco">Parentesco:</label>
+                            <select id="parentesco" name="parentesco">
+                                <option value="">Seleccionar...</option>
+                                <option value="Padre">Padre</option>
+                                <option value="Madre">Madre</option>
+                                <option value="Hijo">Hijo</option>
+                                <option value="Hermano">Hermano</option>
+                                <option value="Abuelo">Abuelo</option>
+                                <option value="Tío">Tío</option>
+                                <option value="Primo">Primo</option>
+                                <option value="Cónyuge">Cónyuge</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="edadFamiliar">Edad:</label>
+                            <input type="number" id="edadFamiliar" name="edadFamiliar" min="0" max="150">
+                        </div>
+                    </div>
+                    <button type="button" class="btn-agregar" id="btnAgregarFamiliar">+ Agregar Familiar</button>
+
+                    <div id="listaFamiliares" class="lista-items">
+                        <!-- Los familiares agregados se mostrarán aquí -->
+                    </div>
+                </div>
+
+                <!-- Página 3: Condiciones Pre-Existentes de Salud -->
+                <div class="pagina" data-pagina="3">
+                    <h2>Página 3: Condiciones Pre-Existentes de Salud</h2>
+                    <p class="info-text">Crónicas o enfermedades diagnosticadas</p>
+                    
+                    <div class="form-group">
+                        <label for="enfermedad">Enfermedad/Condición:</label>
+                        <input type="text" id="enfermedad" name="enfermedad" placeholder="Ej: Hipertensión">
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tiempoEnfermedad">Tiempo con la Enfermedad:</label>
+                            <input type="text" id="tiempoEnfermedad" name="tiempoEnfermedad" placeholder="Ej: 5 años">
+                        </div>
+                        <div class="form-group">
+                            <label for="detallesSalud">Detalles/Observaciones:</label>
+                            <input type="text" id="detallesSalud" name="detallesSalud" placeholder="Ej: Controlada con medicamentos">
+                        </div>
+                    </div>
+                    <button type="button" class="btn-agregar" id="btnAgregarSalud">+ Agregar Condición</button>
+
+                    <div id="listaCondiciones" class="lista-items">
+                        <!-- Las condiciones agregadas se mostrarán aquí -->
+                    </div>
+                </div>
+
+                <!-- Página 4: Internamientos Realizados -->
+                <div class="pagina" data-pagina="4">
+                    <h2>Página 4: Internamientos Realizados</h2>
+                    <p class="info-text">Hospitalizaciones previas</p>
+                    
+                    <div class="form-group">
+                        <label for="fechaInternamiento">Fecha de Internamiento:</label>
+                        <input type="date" id="fechaInternamiento" name="fechaInternamiento">
+                    </div>
+                    <div class="form-group">
+                        <label for="centroMedico">Centro Médico:</label>
+                        <input type="text" id="centroMedico" name="centroMedico" placeholder="Ej: Hospital Central">
+                    </div>
+                    <div class="form-group">
+                        <label for="diagnostico">Diagnóstico:</label>
+                        <textarea id="diagnostico" name="diagnostico" rows="3" placeholder="Describe el motivo del internamiento"></textarea>
+                    </div>
+                    <button type="button" class="btn-agregar" id="btnAgregarInternamiento">+ Agregar Internamiento</button>
+
+                    <div id="listaInternamientos" class="lista-items">
+                        <!-- Los internamientos agregados se mostrarán aquí -->
+                    </div>
+                </div>
+
+                <!-- Página 5: Resumen y Presentación -->
+                <div class="pagina" data-pagina="5">
+                    <h2>Página 5: Resumen de Datos Registrados</h2>
+                    <p class="info-text">Revise la información antes de guardar</p>
+                    
+                    <div id="resumenDatos" class="resumen">
+                        <!-- El resumen se generará aquí -->
+                    </div>
+                </div>
+
+                <!-- Botones de Navegación -->
+                <div class="navegacion">
+                    <button type="button" class="btn btn-secundario" id="btnAnterior">← Anterior</button>
+                    <span id="indicadorPagina" class="indicador">Página 1 de 5</span>
+                    <button type="button" class="btn btn-primario" id="btnSiguiente">Siguiente →</button>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="acciones">
+                    <button type="button" class="btn btn-danger" id="btnLimpiar">Limpiar</button>
+                    <button type="submit" class="btn btn-success" id="btnGuardar">💾 Grabar Registro</button>
+                </div>
+            </form>
+
+            <!-- Área de Ver Registros -->
+            <div id="areaVerRegistros" class="area-ver-registros hidden">
+                <h2>Registros Guardados</h2>
+                <div id="contenedorRegistros" class="contenedor-registros">
+                    <!-- Los registros se cargarán aquí -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Notificaciones -->
+        <div id="notificacion" class="notificacion"></div>
+
+        <!-- Modal: Seleccionar Registro para Editar -->
+        <div id="modalSeleccionarRegistro" class="modal hidden">
+            <div class="modal-contenido">
+                <div class="modal-header">
+                    <h2>Seleccionar Registro para Editar</h2>
+                    <button type="button" class="modal-close" onclick="cerrarModal('modalSeleccionarRegistro')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div id="listaRegistrosEditar" class="lista-registros-modal">
+                        <!-- Se cargarán los registros disponibles aquí -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secundario" onclick="cerrarModal('modalSeleccionarRegistro')">Cancelar</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Confirmar Limpiar Formulario -->
+        <div id="modalConfirmarLimpiar" class="modal hidden">
+            <div class="modal-contenido modal-pequeno">
+                <div class="modal-header">
+                    <h2>Confirmar Acción</h2>
+                    <button type="button" class="modal-close" onclick="cerrarModal('modalConfirmarLimpiar')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 1.1em; color: #F1F5F9;">¿Está seguro de que desea limpiar el formulario? Se perderán todos los cambios sin guardar.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secundario" onclick="cerrarModal('modalConfirmarLimpiar')">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="gestor.interfaz.confirmarLimpiar()">Limpiar Formulario</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: Confirmar Eliminar Registro -->
+        <div id="modalConfirmarEliminar" class="modal hidden">
+            <div class="modal-contenido modal-pequeno">
+                <div class="modal-header">
+                    <h2>Confirmar Eliminación</h2>
+                    <button type="button" class="modal-close" onclick="cerrarModal('modalConfirmarEliminar')">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <p style="font-size: 1.1em; color: #F1F5F9;">¿Está seguro de que desea eliminar este registro? Esta acción no se puede deshacer.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secundario" onclick="cerrarModal('modalConfirmarEliminar')">Cancelar</button>
+                    <button type="button" class="btn btn-danger" onclick="gestor.interfaz.procederConEliminar()">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

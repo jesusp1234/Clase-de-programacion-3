@@ -1,0 +1,278 @@
+{
+  "registros": [
+    {
+      "id": 1,
+      "datosPersonales": {
+        "nombre": "Juan Pérez González",
+        "edad": 45,
+        "cedula": "002-1234567-8",
+        "sexo": "M",
+        "direccion": "Calle 1, Santo Domingo",
+        "telefono": "809-555-1234",
+        "email": "juan@example.com"
+      },
+      "familiares": [
+        {
+          "id": 1,
+          "nombre": "Dionisio Silverio",
+          "parentesco": "Padre",
+          "edad": 84
+        },
+        {
+          "id": 2,
+          "nombre": "María García",
+          "parentesco": "Madre",
+          "edad": 80
+        }
+      ],
+      "condicionesSalud": [
+        {
+          "id": 1,
+          "enfermedad": "Hipertensión",
+          "tiempoEnfermedad": "5 años",
+          "detalles": "Controlada con medicamentos"
+        },
+        {
+          "id": 2,
+          "enfermedad": "Diabetes",
+          "tiempoEnfermedad": "3 años",
+          "detalles": "Tipo 2, controlada"
+        }
+      ],
+      "internamientos": [
+        {
+          "id": 1,
+          "fecha": "2023-06-15",
+          "centroMedico": "Hospital Central",
+          "diagnostico": "Hipertensión severa"
+        },
+        {
+          "id": 2,
+          "fecha": "2024-02-10",
+          "centroMedico": "Clínica las Mercedes",
+          "diagnostico": "Control de diabetes"
+        }
+      ]
+    },
+    {
+      "id": 1712000001,
+      "datosPersonales": {
+        "nombre": "María López Rodríguez",
+        "edad": 38,
+        "cedula": "004-2456789-1",
+        "sexo": "F",
+        "direccion": "Avenida 27 de Febrero, Santo Domingo",
+        "telefono": "809-555-2345",
+        "email": "maria.lopez@example.com"
+      },
+      "familiares": [
+        {
+          "id": 1,
+          "nombre": "Carlos López",
+          "parentesco": "Hermano",
+          "edad": 42
+        },
+        {
+          "id": 2,
+          "nombre": "Ana López",
+          "parentesco": "Hermana",
+          "edad": 36
+        }
+      ],
+      "condicionesSalud": [
+        {
+          "id": 1,
+          "enfermedad": "Asma",
+          "tiempoEnfermedad": "10 años",
+          "detalles": "Moderado, controlado con inhalador"
+        }
+      ],
+      "internamientos": [
+        {
+          "id": 1,
+          "fecha": "2023-11-20",
+          "centroMedico": "Hospital Metropolitano",
+          "diagnostico": "Crisis asmática"
+        }
+      ]
+    },
+    {
+      "id": 1712000002,
+      "datosPersonales": {
+        "nombre": "Roberto García Martínez",
+        "edad": 52,
+        "cedula": "006-3456789-2",
+        "sexo": "M",
+        "direccion": "Calle Mella 123, Santiago",
+        "telefono": "809-555-3456",
+        "email": "roberto.garcia@example.com"
+      },
+      "familiares": [
+        {
+          "id": 1,
+          "nombre": "José García",
+          "parentesco": "Padre",
+          "edad": 87
+        },
+        {
+          "id": 2,
+          "nombre": "Rosa Martínez",
+          "parentesco": "Esposa",
+          "edad": 50
+        },
+        {
+          "id": 3,
+          "nombre": "Roberto Jr.",
+          "parentesco": "Hijo",
+          "edad": 24
+        }
+      ],
+      "condicionesSalud": [
+        {
+          "id": 1,
+          "enfermedad": "Presión Alta",
+          "tiempoEnfermedad": "7 años",
+          "detalles": "Requiere medicamento diario"
+        },
+        {
+          "id": 2,
+          "enfermedad": "Colesterol Alto",
+          "tiempoEnfermedad": "4 años",
+          "detalles": "Controlado con dieta y medicamentos"
+        },
+        {
+          "id": 3,
+          "enfermedad": "Artritis",
+          "tiempoEnfermedad": "2 años",
+          "detalles": "En manos y columna"
+        }
+      ],
+      "internamientos": [
+        {
+          "id": 1,
+          "fecha": "2022-09-14",
+          "centroMedico": "Hospital Ney Ureña",
+          "diagnostico": "Infarto de miocardio leve"
+        }
+      ]
+    },
+    {
+      "id": 1712000003,
+      "datosPersonales": {
+        "nombre": "Francesca Santana Reyes",
+        "edad": 31,
+        "cedula": "008-4567890-3",
+        "sexo": "F",
+        "direccion": "Calle Las Flores 456, La Romana",
+        "telefono": "809-555-4567",
+        "email": "francesca.santana@example.com"
+      },
+      "familiares": [
+        {
+          "id": 1,
+          "nombre": "Pedro Santana",
+          "parentesco": "Padre",
+          "edad": 65
+        },
+        {
+          "id": 2,
+          "nombre": "Lucia Reyes",
+          "parentesco": "Madre",
+          "edad": 62
+        }
+      ],
+      "condicionesSalud": [
+        {
+          "id": 1,
+          "enfermedad": "Tiroides",
+          "tiempoEnfermedad": "3 años",
+          "detalles": "Hipotiroidismo, con levotiroxina"
+        }
+      ],
+      "internamientos": []
+    },
+    {
+      "id": 1712000004,
+      "datosPersonales": {
+        "nombre": "Luis Fernández Contreras",
+        "edad": 67,
+        "cedula": "010-5678901-4",
+        "sexo": "M",
+        "direccion": "Calle Principal 789, Barahona",
+        "telefono": "809-555-5678",
+        "email": "luis.fernandez@example.com"
+      },
+      "familiares": [
+        {
+          "id": 1,
+          "nombre": "Miguel Fernández",
+          "parentesco": "Hijo",
+          "edad": 42
+        },
+        {
+          "id": 2,
+          "nombre": "Sofía Contreras",
+          "parentesco": "Esposa",
+          "edad": 65
+        }
+      ],
+      "condicionesSalud": [
+        {
+          "id": 1,
+          "enfermedad": "Insuficiencia Renal",
+          "tiempoEnfermedad": "6 años",
+          "detalles": "Etapa 3, en seguimiento"
+        },
+        {
+          "id": 2,
+          "enfermedad": "Hipertensión",
+          "tiempoEnfermedad": "15 años",
+          "detalles": "Severa, requiere múltiples medicamentos"
+        }
+      ],
+      "internamientos": [
+        {
+          "id": 1,
+          "fecha": "2024-01-08",
+          "centroMedico": "Hospital Centro de Diálisis",
+          "diagnostico": "Evaluación renal periódica"
+        }
+      ]
+    },
+    {
+      "id": 1712000005,
+      "datosPersonales": {
+        "nombre": "Carmen Rosa Mondesí",
+        "edad": 55,
+        "cedula": "012-6789012-5",
+        "sexo": "F",
+        "direccion": "Avenida Independencia 321, San Felipe",
+        "telefono": "809-555-6789",
+        "email": "carmen.mondesi@example.com"
+      },
+      "familiares": [
+        {
+          "id": 1,
+          "nombre": "Raúl Mondesí",
+          "parentesco": "Hermano",
+          "edad": 58
+        }
+      ],
+      "condicionesSalud": [
+        {
+          "id": 1,
+          "enfermedad": "Osteoporosis",
+          "tiempoEnfermedad": "5 años",
+          "detalles": "Post-menopáusica, con tratamiento"
+        },
+        {
+          "id": 2,
+          "enfermedad": "Depresión",
+          "tiempoEnfermedad": "8 años",
+          "detalles": "Controlada con antidepresivo"
+        }
+      ],
+      "internamientos": []
+    }
+  ]
+}

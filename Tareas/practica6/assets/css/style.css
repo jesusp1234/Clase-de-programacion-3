@@ -1,0 +1,114 @@
+/* Estilos locales para la Práctica 6 */
+
+.main-content {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+header {
+
+    background: rgba(15, 23, 42, 0.6);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    padding: 20px;
+}
+
+.form-container,
+.qr-container {
+    background: var(--card);
+    padding: 2rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    flex: 1;
+    min-width: 300px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 1rem;
+    transition: all var(--transition);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.2);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    width: 100%;
+    margin-bottom: 1rem;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 1px solid var(--text-light);
+    color: var(--text-light);
+    width: 100%;
+}
+
+.btn-back {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.qr-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.qr-container h2 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.qr-container p {
+    color: var(--text-light);
+    margin-bottom: 2rem;
+}
+
+#qrcode {
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    display: inline-block;
+    min-width: 256px;
+    min-height: 256px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qrcode img {
+    max-width: 100%;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Práctica 7 - Gráficos con Chart.js</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- CDN de Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Sistema de Gráficos de Ventas</h1>
+        
+        <div class="content-wrapper no-chart">
+            <!-- Sección del formulario -->
+            <div class="form-section">
+                
+                <!-- Acordeón: Datos Actuales -->
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">
+                        <span>Datos Actuales</span>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div class="accordion-content" style="display: none;">
+                        <div id="dataList" class="data-list"></div>
+                        <button type="button" id="resetData" class="btn btn-danger">
+                            Reiniciar Datos
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Acordeón: Añadir Datos -->
+                <div class="accordion-item">
+                    <button class="accordion-button" onclick="toggleAccordion(this)">
+                        <span>Añadir Datos</span>
+                        <span class="accordion-icon">▼</span>
+                    </button>
+                    <div class="accordion-content" style="display: none;">
+                        <div class="form-group">
+                            <label for="customLabel">Etiqueta:</label>
+                            <input type="text" id="customLabel" placeholder="Ej: Enero, Febrero, etc.">
+                        </div>
+                        <div class="form-group">
+                            <label for="customValue">Valor:</label>
+                            <input type="number" id="customValue" placeholder="Ej: 1500" min="0">
+                        </div>
+                        <button type="button" id="addCustomData" class="btn btn-secondary">
+                            Agregar Dato
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Configurar Gráfico (debajo de los acordeones) -->
+                <h2>Configurar Gráfico</h2>
+                
+                <form id="chartForm">
+                    <div class="form-group">
+                        <label for="chartType">Tipo de Gráfico:</label>
+                        <select id="chartType">
+                            <option value="line">Línea</option>
+                            <option value="bar">Barras</option>
+                            <option value="pie">Pastel</option>
+                            <option value="doughnut">Dona</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="dataSource">Fuente de Datos:</label>
+                        <select id="dataSource">
+                            <option value="ventas">Ventas por Mes</option>
+                            <option value="visitas">Visitas por Mes</option>
+                            <option value="productos">Productos Vendidos</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="showLegend" checked>
+                            Mostrar leyenda
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="showGrid" checked>
+                            Mostrar grid
+                        </label>
+                    </div>
+
+                    <button type="button" id="generateChart" class="btn btn-primary">
+                        Generar Gráfico
+                    </button>
+                </form>
+            </div>
+
+            <!-- Sección del gráfico -->
+            <div class="chart-section">
+                <h2>Gráfico</h2>
+                <div class="chart-container">
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
